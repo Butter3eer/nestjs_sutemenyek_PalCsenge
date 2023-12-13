@@ -3,12 +3,22 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title><%= message %></title>
+    <title>Sütemények</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <p><%= message %></p>
+    <h1>Sütemények</h1>
+    <ul>
+      <% sutemenyek.forEach((suti) => { %>
+        <li>
+          <a href="/sutemenyek/<%= suti.id %>">
+            <%= suti.nev %>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+    <a href="ujsutemeny"><button>Új süti</button></a>
 </body>
 </html>
